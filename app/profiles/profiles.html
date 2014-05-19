@@ -1,0 +1,15 @@
+<div>
+  <ul>
+    <li>Profiles</li>
+    <li data-ng-repeat="profile in profiles">
+      <a href="#/profiles/{{profile.ProfileID}}">
+        <div><img src="img/hollywoodcat.png"></div>
+        <strong>{{profile.Title}}</strong><br />
+        <p>{{profile.Description}}</p>
+	<a href=#/profiles/{{profile.ProfileID}}>View</a >
+        <span></span>
+      </a>
+    </li>
+  </ul>
+</div>
+

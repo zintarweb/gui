@@ -1,0 +1,13 @@
+<div>
+  <ul>
+    <li>Users</li>
+    <li data-ng-repeat="user in users">
+      <a href="#/users/{{user.UserID}}">
+        <div><img src="img/hollywoodcat.png"></div>
+        <strong>{{user.Fname}}</strong><br />
+        <p>{{user.Lname}}</p>
+        <span></span>
+      </a>
+    </li>
+  </ul>
+</div>

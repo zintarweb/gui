@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="thisApp" >
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Basic Page Needs
+================================================== -->
+	<meta charset="utf-8">
+	<meta name="description" content="Local Music Directory">
+	<meta name="keywords" content="Local Music, Bands, DJ, Club, Bar, Dancing, Night Club">
+	<meta name="author" content="John Lee">
+	<meta name="robots" content="index, follow, noarchive">
+	<meta property="og:image" content="http://www.lmed.com/img/logo.jpg">
+	<meta property="og:title" content="LMED">
+	<meta property="og:url" content="http://www.lmed.com/">
+	<meta property="og:site_name" content="Local Music Directory">
+	<meta property="og:type" content="website">
+	
+<!-- Mobile Specific Metas
+================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Favicons
+================================================== -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+
+	<title>LMED</title>
+
+	<!-- CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/angular.css" rel="stylesheet">
+	<link href="css/layout.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="js/angular.js"></script >
+	<script src="js/angular-resource.min.js"></script >
+	<script src="js/angular-route.min.js"></script>
+
+	<!-- Misc Scripts, Main Nav controller
+	================================================== -->
+	<script type="text/javascript" src="js/retina.js"></script>
+	<script src="fonts/ss-social.js"></script>
+	<script src="fonts/ss-standard.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/layout.js"></script>
+<!-- Header ================================================================================ -->
+	<!-- Main Nav 
+	================================================== -->
+	<nav class="main" >
+		<div class="show_hide">
+			<i class="ss-icon dropdown">&#xE9A1;</i>
+			<a href="" class=title >LMED</a>
+		</div>
+		<div class="slidingDiv">
+			<ul class="menu">
+				<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
+				<li><a href="#/profiles">Profiles</a></li>
+				<li><a href="#/users">Users</a></li>
+				<li><a href="#/settings">Settings</a></li>
+			</ul>
+		<form>
+		<input type="search" placeholder="Search">
+		</form>
+		</div>
+	</nav >
+<!-- End Header ================================================================================ -->
+
+	<!-- placeholder for view markup -->
+	<div ng-view ng-animate="'slide'"></div>  
+
+<!-- Footer ================================================================================ -->
+	<div class="footer" >
+		<ul >
+			<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
+			<li><a href="#/profiles">Profiles</a></li>
+			<li><a href="#/users">Users</a></li>
+			<li><a href="#/settings">Settings</a></li>
+		</ul>
+	</div >
+<!-- End Footer ================================================================================ -->
+
+<!-- Routes, Views, Controllers, Models 
+	================================================================================================================================ -->
+	<script src="routes.js"></script >
+
+	<script src="app/root/root.c.js"></script >
+	<script src="app/root/root.m.js"></script >
+
+	<script src="app/settings/settings.c.js"></script >
+
+	<script src="app/profiles/profiles.c.js"></script >
+	<script src="app/profiles/profiles.m.js"></script >
+	<script src="app/users/users.c.js"></script >
+	<script src="app/users/users.m.js"></script >
+
+</body>
+</html>
+

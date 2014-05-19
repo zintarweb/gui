@@ -1,0 +1,13 @@
+<div>
+  <ul>
+    <li>Recommended movies</li>
+    <li data-ng-repeat="movie in recommendedMovies">
+      <a href="#/theaters">
+        <div><img src="img/hollywoodcat.png"></div>
+        <strong>{{movie.name}}</strong><br />
+        <p>{{movie.description}}</p>
+        <span></span>
+      </a>
+    </li>
+  </ul>
+</div>
