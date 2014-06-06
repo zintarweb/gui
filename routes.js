@@ -16,6 +16,12 @@ thisApp.config(function ($routeProvider) {
             templateUrl: 'app/root/root.html'
         })
 
+	// Register
+		.when ('/register', 
+		{
+			controller: 'registerController',
+			templateUrl: 'app/register/register.html'
+		})
 	// Users
         .when('/users',
         {
