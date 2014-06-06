@@ -1,11 +1,14 @@
+// LMED WS
 // RegisterController
 //
 thisApp.controller('registerController', function($scope,$http, $routeParams, registerFactory){
 
     $scope.register = function() {
-		registerFactory.addUser($http, $scope).then(
-			alert("register")
-		);
+		registerFactory.addUser($http, $scope).then(function(data){
+			$scope.users = data;
+			$scope.ready = true;           
+		});
+
 	};
     init();
 

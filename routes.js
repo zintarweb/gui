@@ -1,7 +1,41 @@
 var config = {}
 config.wsUrl = 'http://localhost:1337';
-
 var thisApp = angular.module('thisApp',['ngRoute']);
+
+thisApp.constant('AUTH_EVENTS', {
+  loginSuccess: 'auth-login-success',
+  loginFailed: 'auth-login-failed',
+  logoutSuccess: 'auth-logout-success',
+  sessionTimeout: 'auth-session-timeout',
+  notAuthenticated: 'auth-not-authenticated',
+  notAuthorized: 'auth-not-authorized'
+})
+thisApp.constant('USER_ROLES', {
+  all: '*',
+  admin: 'admin',
+  editor: 'editor',
+  guest: 'guest'
+})
+thisApp.service('Session', function () {
+  this.create = function (sessionId, userId, userRole) {
+    this.id = sessionId;
+    this.userId = userId;
+    this.userRole = userRole;
+  };
+  this.destroy = function () {
+    this.id = null;
+    this.userId = null;
+    this.userRole = null;
+  };
+  return this;
+})
+thisApp.controller('AppController', function ($scope,
+                                               USER_ROLES,
+                                               loginFactory) {
+  $scope.currentUser = null;
+  $scope.userRoles = USER_ROLES;
+  $scope.isAuthorized = loginFactory.isAuthorized;
+})
 
 ////////// ROUTING /////////////////////////
 // Deffining $routeProvider for Pomidoro applicatiom module
@@ -16,6 +50,12 @@ thisApp.config(function ($routeProvider) {
             templateUrl: 'app/root/root.html'
         })
 
+	// Login
+		.when ('/login', 
+		{
+			controller: 'loginController',
+			templateUrl: 'app/login/login.html'
+		})
 	// Register
 		.when ('/register', 
 		{
