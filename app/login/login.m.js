@@ -1,6 +1,10 @@
+// LMED GUI
+// login model 
+
 thisApp.factory('loginFactory', function ($http, Session) {
   return {
     login: function (credentials) {
+	console.log (credentials);
       return $http
         .post(config.wsUrl + '/login', credentials)
         .then(function (res) {
@@ -19,4 +23,5 @@ thisApp.factory('loginFactory', function ($http, Session) {
     }
   };
 });
+
 
