@@ -33,6 +33,8 @@ thisApp.controller('AppController', function ($scope,
                                                USER_ROLES,
                                                loginFactory) {
   $scope.currentUser = null;
+  $scope.currentUser = {};
+  $scope.currentUser = {Fname: "none"};
   $scope.userRoles = USER_ROLES;
   $scope.isAuthorized = loginFactory.isAuthorized;
 })

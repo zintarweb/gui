@@ -9,3 +9,18 @@
          ng-model="credentials.secret">
   <button type="submit">Login</button>
 </form>
+
+<div>
+  <ul>
+    <li>Logged in user</li>
+    <li data-ng-repeat="user in users">
+      <a href="#/users/{{user.UserID}}">
+        <strong>{{user.Fname}}</strong><br />
+        <p>{{user.Lname}}</p>
+        <p>{{user.Email}}</p>
+        <span></span>
+      </a>
+    </li>
+  </ul>
+</div>
+

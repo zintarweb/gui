@@ -49,7 +49,7 @@
 <body ng-controller="AppController">
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/jquery.1.11.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 
@@ -64,45 +64,7 @@
 	<script src="fonts/ss-standard.js"></script>
 	<script src="js/jquery.fancybox.pack.js"></script>
 	<script src="js/layout.js"></script>
-<!-- Header ================================================================================ -->
-	<!-- Main Nav 
-	================================================== -->
-	<nav class="main" >
-		<div class="show_hide">
-			<i class="ss-icon dropdown">&#xE9A1;</i>
-			<a href="" class=title >LMED</a> {{session.name}}
-		</div>
-		<div class="slidingDiv">
-			<ul class="menu">
-				<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
-				<li><a href="#/profiles">Profiles</a></li>
-				<li><a href="#/users">Users</a></li>
-				<li><a href="#/settings">Settings</a></li>
-				<li><a href="#/register">Register</a></li>
-			</ul>
-		<form>
-		<input type="search" placeholder="Search">
-		</form>
-		</div>
-	</nav >
-<!-- End Header ================================================================================ -->
-
-	<!-- placeholder for view markup -->
-	<div ng-view ng-animate="'slide'"></div>  
-
-<!-- Footer ================================================================================ -->
-	<div class="footer" >
-		<ul >
-			<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
-			<li><a href="#/profiles">Profiles</a></li>
-			<li><a href="#/users">Users</a></li>
-			<li><a href="#/settings">Settings</a></li>
-				<li><a href="#/register">Register</a></li>
-				<li><a href="#/login">Login</a></li>
-		</ul>
-	</div >
-<!-- End Footer ================================================================================ -->
-
+	
 <!-- Routes, Views, Controllers, Models 
 	================================================================================================================================ -->
 	<script src="routes.js"></script >
@@ -121,6 +83,50 @@
 	<script src="app/users/users.m.js"></script >
 	<script src="app/register/register.c.js"></script >
 	<script src="app/register/register.m.js"></script >
+	
+	
+<!-- Header ================================================================================ -->
+	<!-- Main Nav 
+	================================================== -->
+	<nav class="main" >
+		<div class="show_hide">
+			<i class="ss-icon dropdown">&#xE9A1;</i>
+			<a href="" class=title >LMED</a> 
+		</div>
+			<a href="#/login">Login</a>
+		<div class="slidingDiv">
+			<ul class="menu">
+				<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
+				<li><a href="#/profiles">Profiles</a></li>
+				<li><a href="#/users">Users</a></li>
+				<li><a href="#/settings">Settings</a></li>
+				<li><a href="#/register">Register</a></li>
+			</ul>
+		<form>
+		<input type="search" placeholder="Search">
+		</form>
+		</div>
+	</nav >
+<!-- End Header ================================================================================ -->
+
+	<!-- placeholder for view markup -->
+<div ng-if="currentUser">Welcome, {{ currentUser.Fname }}</div>
+<div ng-if="isAuthorized">You are logged in</div>
+	<div ng-view ng-animate="'slide'"></div>  
+
+<!-- Footer ================================================================================ -->
+	<div class="footer" >
+		<ul >
+			<li><a href="/"><i class="ss-icon nav">&#x2302;</i>Home</a></li>
+			<li><a href="#/profiles">Profiles</a></li>
+			<li><a href="#/users">Users</a></li>
+			<li><a href="#/settings">Settings</a></li>
+				<li><a href="#/register">Register</a></li>
+				<li><a href="#/login">Login</a></li>
+		</ul>
+	</div >
+<!-- End Footer ================================================================================ -->
+
 
 </body>
 </html>
