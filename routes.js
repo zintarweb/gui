@@ -88,6 +88,14 @@ thisApp.config(function ($routeProvider) {
             templateUrl: 'app/profiles/profiles.html'
         })
 
+        // Uploads page
+        //
+        .when('/upload',
+        {
+            controller: 'uploadController',
+            templateUrl: 'app/upload/upload.html'
+        })
+
         // settings page
         //
         .when('/settings',

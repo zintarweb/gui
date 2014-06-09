@@ -1,3 +1,6 @@
+// LMED gui
+// profile model
+//
 
 thisApp.factory('profilesFactory', function(){
 	var factory = {};
@@ -14,5 +17,11 @@ thisApp.factory('profilesFactory', function(){
 		return response.data;
 	})
     }
+	factory.updateProfile = function($http, $scope){
+		var url = config.wsUrl + '/profile';
+		return $http.post(url, $scope.profile).then( function(response){
+		  return response.data;
+		});
+	}
     return factory;
 });
